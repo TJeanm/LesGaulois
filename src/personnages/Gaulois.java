@@ -13,7 +13,19 @@ public class Gaulois {
 		return nom;
 	}
 	
-	public int getForce() {
-		return force;
+	
+	public void parler(String chaine) {
+		System.out.println("Le gaulois " + nom + " : \"" + chaine + "\".");
+	}
+
+	public void frapper(Romain romain) {
+		String nomRomain = romain.getNom();
+		System.out.println(nom + " envoie un grand coup dans la mâchoire de " + nomRomain);
+		romain.recevoirCoup(force/3);
+	}
+	
+	public static void main(String[] args) {
+		Gaulois asterix=new Gaulois("Asterix",8);
+		System.out.println(asterix.getNom());
 	}
 }
