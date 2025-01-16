@@ -12,7 +12,7 @@ public class Gaulois extends Personnage {
 		System.out.println("Le gaulois " + nomRomain + " : \"" + chaine + "\".");
 	}
 
-	
+	@Override
 	protected String donnerAuteur() {
 		return "Gaulois ";
 	}

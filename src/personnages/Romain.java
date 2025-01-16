@@ -8,10 +8,11 @@ public class Romain extends Personnage {
 
 	@Override
 	public void parler(String chaine) {
-		String nomRomain=getNom();
+		String nomRomain = getNom();
 		System.out.println("Le Romain " + nomRomain + " : \"" + chaine + "\".");
 	}
-	
+
+	@Override
 	protected String donnerAuteur() {
 		return "Romain ";
 	}
