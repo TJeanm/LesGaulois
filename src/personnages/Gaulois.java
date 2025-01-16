@@ -1,31 +1,19 @@
 package personnages;
 
-public class Gaulois {
-	private String nom;
-	private int force;
+public class Gaulois extends Personnage {
 	
 	public Gaulois(String nom, int force) {
-		this.nom = nom;
-		this.force = force;
-	}
-
-	public String getNom() {
-		return nom;
+		super(nom, force);
 	}
 	
-	
+	@Override
 	public void parler(String chaine) {
-		System.out.println("Le gaulois " + nom + " : \"" + chaine + "\".");
+		String nomRomain=getNom();
+		System.out.println("Le gaulois " + nomRomain + " : \"" + chaine + "\".");
 	}
 
-	public void frapper(Romain romain) {
-		String nomRomain = romain.getNom();
-		System.out.println(nom + " envoie un grand coup dans la mâchoire de " + nomRomain);
-		romain.recevoirCoup(force/3);
-	}
 	
-	public static void main(String[] args) {
-		Gaulois asterix=new Gaulois("Asterix",8);
-		System.out.println(asterix.getNom());
+	protected String donnerAuteur() {
+		return "Gaulois ";
 	}
 }
