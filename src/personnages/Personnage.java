@@ -2,7 +2,7 @@ package personnages;
 
 public abstract class Personnage {
 	private String nom;
-	private int force;
+	protected int force;
 	
 	protected Personnage(String nom, int force) {
 		this.nom = nom;
@@ -21,8 +21,17 @@ public abstract class Personnage {
 	
 		
 	public void frapper(Personnage adversaire) {
-		System.out.println("Le " + donnerAuteur() + nom + " donne un grand coup au " + adversaire.donnerAuteur() + adversaire.getNom());
-		adversaire.recevoirCoup(force/3); 
+		double coup = ((double)force)/3;
+		if(adversaire.estATerre()) {
+			
+		}
+		else if (this.estATerre()) {
+			this.parler("Je ne peux plus me battre...");
+		}
+		else if(!adversaire.estATerre() && !this.estATerre()) {
+			this.parler("envoie un grand coup dans la mâchoire de " + adversaire.getNom() + " avec une force de " + (int)Math.ceil(coup));
+			adversaire.recevoirCoup(force / 3);
+		}
 	}
 	
 	public void recevoirCoup(int forceCoup) {
@@ -31,8 +40,12 @@ public abstract class Personnage {
 			this.parler("J'abandonne !");
 		} else {
 			this.force -= forceCoup;
-			this.parler("A�e");
+			this.parler("Aïe");
 		}
+	}
+	
+	public boolean estATerre() {
+	    return this.force <= 0; 
 	}
 
 
