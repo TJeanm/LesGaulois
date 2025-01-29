@@ -58,7 +58,7 @@ public class TestGaulois {
 		minus.parler("UN GAU... UN GAUGAU...");
 
 
-		for (int i = 0; i<3;i++) {
+		while(!(asterix.estATerre() || minus.estATerre())) {
 		asterix.frapper(minus);
 		minus.frapper(asterix);}
 		

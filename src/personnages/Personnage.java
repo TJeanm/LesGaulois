@@ -21,15 +21,8 @@ public abstract class Personnage {
 	
 		
 	public void frapper(Personnage adversaire) {
-		double coup = ((double)force)/3;
-		if(adversaire.estATerre()) {
-			
-		}
-		else if (this.estATerre()) {
-			this.parler("Je ne peux plus me battre...");
-		}
-		else if(!adversaire.estATerre() && !this.estATerre()) {
-			this.parler("envoie un grand coup dans la mâchoire de " + adversaire.getNom() + " avec une force de " + (int)Math.ceil(coup));
+		if(!adversaire.estATerre() && !this.estATerre()) {
+			this.parler("envoie un grand coup dans la mâchoire de " + adversaire.getNom() + " avec une force de " + force);
 			adversaire.recevoirCoup(force / 3);
 		}
 	}

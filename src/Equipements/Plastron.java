@@ -1,11 +1,7 @@
 package Equipements;
 
 public class Plastron {
-    private final int defense;
-
-    public Plastron(int defense) {
-        this.defense = defense;
-    }
+	public int defense=2;
 
     public int getDefense() {
         return defense;

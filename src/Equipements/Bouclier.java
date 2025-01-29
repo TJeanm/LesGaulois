@@ -1,8 +1,7 @@
 package Equipements;
 
-public class Casque {
-
-    public int defense=3;
+public class Bouclier {
+	public int defense=3;
 
     public int getDefense() {
         return defense;

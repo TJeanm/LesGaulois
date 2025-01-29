@@ -21,20 +21,18 @@ public class Gaulois extends Personnage {
 
 	@Override
 	public void frapper(Personnage victime) {
-		int forceCoup = (int) ((this.force) * this.puissancePotion / 3);
-		if (victime.estATerre()) {
-
-		} else if (this.estATerre()) {
+		int forceCoup = (int)(this.force * this.puissancePotion);
+		if (this.estATerre()) {
 			this.parler("Je ne peux plus me battre...");
-		} else if (!victime.estATerre() && !this.estATerre()) {
-
-			super.parler(
-					"envoie un grand coup dans la mâchoire de " + victime.getNom() + " avec une force de " + forceCoup);
-			victime.recevoirCoup(forceCoup);
-			this.puissancePotion = Math.max(1.0, this.puissancePotion - 0.5);
-
 		}
-	}
+		else if(!victime.estATerre() && !this.estATerre()) {
+			
+        super.parler("envoie un grand coup dans la mâchoire de " + victime.getNom() + " avec une force de " + forceCoup);
+        victime.recevoirCoup(forceCoup);
+        this.puissancePotion = Math.max(1.0, this.puissancePotion - 0.5);
+        
+    }
+		}
 
 	@Override
 	public void parler(String chaine) {
