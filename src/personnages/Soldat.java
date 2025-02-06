@@ -1,23 +1,34 @@
 package personnages;
 
-import objets.Bouclier;
-import objets.Casque;
-import objets.Plastron;
+import objets.Equipements;
 
 public class Soldat extends Romain {
 	
 	public Grade grade;
 	
-	Casque casque;
-	Bouclier bouclier;
-	Plastron  plastron;
+	private Equipements[] equipements;
+	
+	private int nbEquipements=0;
 	
 	public Soldat(String nom, int force, Grade grade) {
 		super(nom, force);
 		this.grade = grade;
-		casque = new Casque();
-		plastron = new Plastron();
-		bouclier = new Bouclier();
+		equipements=new Equipements[3];
+	
+	}
+	
+	public void equiper (Equipements equipement) {
+		if (nbEquipements>=3) {
+			System.out.println("Plus de lace pour de l'équipement supplémentaire");
+		}else {
+			for (int i=0;i<nbEquipements;i++) {
+				if (equipements[i]==equipement) {
+					System.out.println("Déjà équipé");
+				}
+			}
+			equipements[nbEquipements]=equipement;
+			nbEquipements++;
+		}
 	}
 	
 	private int protection(int force) {
