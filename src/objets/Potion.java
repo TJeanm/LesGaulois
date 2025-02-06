@@ -1,4 +1,4 @@
-package Equipements;
+package objets;
 
 public class Potion {
     private final int puissance;

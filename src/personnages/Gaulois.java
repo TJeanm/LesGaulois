@@ -1,6 +1,6 @@
 package personnages;
 
-import Equipements.Potion;
+import objets.Potion;
 
 public class Gaulois extends Personnage {
 

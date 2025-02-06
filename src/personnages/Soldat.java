@@ -1,8 +1,8 @@
 package personnages;
 
-import Equipements.Bouclier;
-import Equipements.Casque;
-import Equipements.Plastron;
+import objets.Bouclier;
+import objets.Casque;
+import objets.Plastron;
 
 public class Soldat extends Romain {
 	

@@ -1,4 +1,4 @@
-package Equipements;
+package objets;
 
 public class Plastron {
 	public int defense=2;

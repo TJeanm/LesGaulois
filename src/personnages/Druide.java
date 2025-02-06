@@ -3,7 +3,7 @@ package personnages;
 import java.security.SecureRandom;
 import java.util.Random;
 
-import Equipements.Potion;
+import objets.Potion;
 
 public class Druide extends Gaulois {
 	private Potion[] stockPotions;
